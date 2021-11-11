@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,25 @@
     <link rel="icon" href="/favicon.ico">
     <title>周师小栈后台登录</title>
 </head>
+
 <body class="login-wrap">
-           <div class="header">
-                <ul>
-                <a href="load.html" ><img src="assets/images/校徽1.png"></a>
-             <span class="logo">
+    <div class="header">
+        <ul>
+            <a href="load.html"><img src="assets/images/校徽1.png"></a>
+            <span class="logo">
                 周师小栈
              </span>
-                <li>简体中文（中国）</li>
-                    <li>帮助</li>
-                    <li>联系我们</li>
-                </ul>
-            </div>
+            <li>简体中文（中国）</li>
+            <li>帮助</li>
+            <li>联系我们</li>
+        </ul>
+    </div>
     <div class="login-container">
-      
-    	<h3>周师小栈后台登录</h3>
+        <h3>周师小栈后台登录</h3>
         <form class="login-form" action="index.html">
             <div class="input-group">
-                <input type="text" id="username" class="input-field">
+                <!-- 加入autocomplete="off"禁止以前输入的再次出现 -->
+                <input type="text" id="username" autocomplete="off" class="input-field">
                 <label for="username" class="input-label">
                     <span class="label-title">用户名</span>
                 </label>
@@ -47,27 +49,27 @@
 <script src="../qrcode/jquery2.1.4.js"></script>
 <script src="../layer/layer.js"></script>
 <script>
-    $(function () {
-       $(".login-button").click(function () {
-           var username = $("#username").val();
-           var password = $("#password").val();
-
-           //1.     先转圈，先试用layer，弹出load("提示加载中....")
-           var windowId = layer.load();
-           //2.     ajax与服务器交互
-           $.post("login.do",{username:username,password:password},function (data){
-               //3.     关闭load窗口
-               layer.close(windowId);
-               //4.     将服务器回复的结果进行显示
-               layer.msg(data.result);
-               if(data.status == 0){
-                   // 跳转到主页
-                   location.assign("index.html");
-               }
-               //
-           },"JSON");
-
-       });
+    $(function() {
+        $(".login-button").click(function() {
+            var username = $("#username").val();
+            var passowrd = $("#password").val();
+            // 1, 先使用layer弹出load（提示加载中）
+            var windowId = layer.load();
+            // 2, ajax与服务器交互
+            $.post("login.do", {
+                username: username,
+                password: passowrd
+            }, function(data) {
+                // 3, 关闭load窗口
+                layer.close(windowId);
+                // 4, 将服务器回复的结果进行显示
+                layer.msg(data.result);
+                if (data.status == 0) {
+                    location.assign("index.html");
+                }
+            }, "JSON");
+        });
     });
 </script>
+
 </html>
