@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/layui.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>周师小栈后台登录</title>
 </head>
 
@@ -23,27 +24,46 @@
             <li>联系我们</li>
         </ul>
     </div>
-    <div class="login-container">
+    <!-- <div class="login-container">
         <h3>周师小栈后台登录</h3>
         <form class="login-form" action="index.html">
             <div class="input-group">
-                <!-- 加入autocomplete="off"禁止以前输入的再次出现 -->
-                <input type="text" id="username" autocomplete="off" class="input-field">
-                <label for="username" class="input-label">
+    <input type="text" id="username" autocomplete="off" class="input-field">
+    <label for="username" class="input-label">
                     <span class="label-title">用户名</span>
                 </label>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" class="input-field">
-                <label for="password" class="input-label">
+    </div>
+    <div class="input-group">
+        <input type="password" id="password" class="input-field">
+        <label for="password" class="input-label">
                     <span class="label-title">密码</span>
                 </label>
+    </div>
+    <button type="button" class="login-button">登录<i class="ai ai-enter"></i></button>
+    </form> 
+    </div>-->
+    <div class="container">
+        <h1>Please Login</h1>
+        <form>
+            <div class="form-control">
+                <input type="text" required>
+                <label>Email</label>
             </div>
-            <button type="button" class="login-button">登录<i class="ai ai-enter"></i></button>
+
+            <div class="form-control">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+
+            <button class="btn">Login</button>
+
+            <p class="text">Don't have an account? <a href="#">Register</a> </p>
         </form>
     </div>
+    <script src="script.js"></script>
 </body>
 <script src="assets/layui.js"></script>
+<script src="js/script.js"></script>
 <script src="js/index.js" data-main="login"></script>
 <script src="js/login.js" data-main="login"></script>
 <script src="../qrcode/jquery2.1.4.js"></script>
